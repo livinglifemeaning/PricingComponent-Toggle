@@ -19,7 +19,7 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
-=
+
 ### Notes
 
 - First time using aria-hidden https://developer.mozilla.org/en-US/docs/Web/API/Element/ariaHidden
