@@ -210,6 +210,7 @@ button:active{
     }
 
     .cards{
+        margin-top: 5.5rem;  
         flex-direction: row;  
         gap: .5rem;  
         flex-shrink: 0; 
@@ -217,6 +218,10 @@ button:active{
     }
     .card.blue{
         scale: 1.1; 
+    }
+
+    .title-main{
+        font-size: 2rem; 
     }
 }
 
