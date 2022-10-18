@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root{
+--f-primary: 'Montserrat', sans-serif; 
+--c-gradient:linear-gradient(95deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%)); 
+--c100:hsl(240, 78%, 98%); 
+--c300: hsl(234, 14%, 74%); 
+--c500: hsl(233, 13%, 49%); 
+--c600: hsl(232, 13%, 33%); 
+}
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0; 
+}
+ul{
+    list-style-type: none;
+    padding: 0; 
+}
+button{
+    font-family: inherit;
+}
+img{
+    max-width: 100%; 
+}
+body{
+    min-height: 100vh;
+    max-width: 100vw;  
+    overflow-x: hidden;
+    background-color: var(--c100);
+    position: relative; 
+}
+main{
+   width: 100%; 
+   height: 100%; 
+    font-family: var(--f-primary);
+    padding: 3rem 1.25rem 5rem; 
+    position: relative; 
+    z-index: 100; 
+    text-align: center;   
+}
+
+.bg-top, .bg-btm{
+    position: absolute;  
+z-index: 1; 
+} 
+.bg-btm{
+    display: none;  
+}
+.bg-top{
+    top: -9vh;  
+    right: -50vw; 
+
+
+}
+
+.title-main{
+    color: var(--c600);
+    margin-bottom: 2rem; 
+}
+
+.billing{
+    display: flex; 
+    gap: 1rem; 
+   justify-content: center; 
+   align-items: center;
+   color: var(--c300); 
+} 
+
+.toggle{
+    background: var(--c-gradient); 
+    width: 3.5rem; 
+    border-radius: 50px;   
+    display: flex; 
+    align-items: center; 
+    padding: .2rem .3rem; 
+}
+
+.toggle.monthly .circle{
+    translate: 20px; 
+     
+}
+
+.circle{
+    translate: 0; 
+    transition: translate 300ms ease-in-out;
+    height: 1.7rem; 
+    width: 1.7rem; 
+    background-color: #fff;
+    border-radius: 50%; 
+    
+}
+
+.cards{
+    margin-top: 4rem; 
+    display: flex;  
+    flex-direction: column;  
+    gap: 2rem;  
+    position: relative; 
+    z-index: 100; 
+    color: var(--c600); 
+}
+
+.card{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(195, 197, 203, 0.3); 
+    padding: 2rem;  
+    min-width: 20rem; 
+}
+
+.card.blue{
+    background: var(--c-gradient);
+    color: #fff; 
+}
+
+.title-card{
+    font-size: 1.2rem; 
+    margin-bottom: 2rem;  
+}
+
+.price{
+    font-size: 3rem; 
+    margin-bottom: 2.5rem;  
+    animation: transitionPrice 320ms ease-in; 
+}
+
+.hidden{
+    display: none; 
+}
+.features{
+    display: flex;
+    flex-direction: column; 
+    gap: 2rem;  
+    margin-bottom: 2.5rem;  
+}
+
+.feature{
+    position: relative;  
+    z-index: 50;  
+}
+
+.feature:first-of-type::before, .feature:first-of-type::after, .feature:last-of-type::before, .feature:last-of-type::after{
+    position: absolute; 
+    z-index: 100;   
+    content: ''; 
+    background-color: var(--c300); 
+    width: 100%; 
+    height: .01rem;    
+    left: 0;  
+}
+
+.card.blue .feature::before, .card.blue .feature::after{
+    background-color: var(--c100);
+}
+
+.feature::before{
+    top: -1rem; 
+}
+
+.feature::after{
+    bottom: -1rem; 
+}
+
+
+
+button{
+    width: 100%; 
+    padding: 1rem; 
+    border-radius: 10px; 
+    border: none; 
+    text-transform: uppercase;
+    cursor: pointer; 
+    background: var(--c-gradient);  
+    color: #fff; 
+
+}
+
+button:active{
+    scale: .98; 
+}
+
+.gradientBtn{
+    background-color: #fff; 
+    border-radius: 10px;  
+}
+.gradientBtn button{
+    width: 100%;  
+    height: 100%; 
+    border: none; 
+  background-image: var(--c-gradient);
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: text; 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+@media (min-width: 750px) {
+    .bg-top{
+        top: 0; 
+        right: 0; 
+    }
+
+    .bg-btm{
+        display: block;
+        bottom: 0; 
+        left: 0; 
+    }
+
+    .cards{
+        flex-direction: row;  
+        gap: .5rem;  
+        flex-shrink: 0; 
+        justify-content: center;
+    }
+    .card.blue{
+        scale: 1.1; 
+    }
+}
+
+@keyframes transitionPrice {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+      }
+    
+      50% {
+        opacity: 1;
+      }
+}
